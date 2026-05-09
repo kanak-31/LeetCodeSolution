@@ -3,9 +3,14 @@ Approach: Binary Search using the API bool isBadVersion(version)
 Description: Minimizes the search space by checking the middle version and narrowing the range to efficiently locate the first bad version.
 Time Complexity: O(log n)
 Space Complexity: O(1)
+*/
+#include <bits/stdc++.h>
+using namespace std;
 
-*/int firstBadVersion(int n) {
-    int low = 1, high = n;
+class Solution {
+public:
+    int firstBadVersion(int n) {
+        int low = 1, high = n;
 
         while (low < high) {
             int mid = low + (high - low) / 2;
@@ -17,4 +22,5 @@ Space Complexity: O(1)
             }
         }
         return low;  // low == high == first bad version
-}
+    }
+};
