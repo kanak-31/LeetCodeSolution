@@ -11,26 +11,42 @@ Time Complexity: O(n)
 
 Space Complexity: O(1)
     - No extra space used, only variables.
-*/ 
+*/
+#include <bits/stdc++.h>
+using namespace std;
+
+class Solution
+{
+public:
+    int maxArea(vector<int> &height)
+    {
+
         int maximum = 0;
         int amount;
-        int i = 0; 
-        int j = height.size()-1;
 
-        while(i<j){
+        int i = 0;
+        int j = height.size() - 1;
 
-            amount = min(height[i],height[j]) * (j-i);
-            if(maximum < amount){
+        while (i < j)
+        {
+
+            amount = min(height[i], height[j]) * (j - i);
+
+            if (maximum < amount)
+            {
                 maximum = amount;
             }
 
-            if(height[i] < height[j]){
+            if (height[i] < height[j])
+            {
                 i++;
-            } else{
+            }
+            else
+            {
                 j--;
             }
         }
-        
-        return maximum;
 
-        
+        return maximum;
+    }
+};
